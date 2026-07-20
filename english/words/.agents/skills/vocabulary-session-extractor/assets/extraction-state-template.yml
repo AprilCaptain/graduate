@@ -1,0 +1,13 @@
+version: 1
+
+processed_records: {}
+
+# 完成内容文件与格式验证后再填入，例如：
+# processed_records:
+#   YYYY-MM-DD-xxxxxxxx:
+#     training_date: YYYY-MM-DD
+#     source: pasted-chat-record
+#     daily_file: daily/YYYY/MM/YYYY-MM-DD.md
+#     status: completed
+
+last_processed_record: null

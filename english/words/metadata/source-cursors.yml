@@ -1,0 +1,10 @@
+version: 1
+
+sources:
+  chatgpt-share-6a5db1cb-5114-83ea-bc47-10e7e2a54f2d:
+    kind: chatgpt-share
+    location: https://chatgpt.com/share/6a5db1cb-5114-83ea-bc47-10e7e2a54f2d
+    last_message_id: 31dafd56-aeb5-418c-8a08-19e8b0f24dc7
+    last_message_sha256: 59460c096555577278af003fe1b2b755bc7ca853dadb394ee9ec4492d1588f38
+    last_record_id: 2026-07-20-79c32dd8
+    last_training_date: 2026-07-20

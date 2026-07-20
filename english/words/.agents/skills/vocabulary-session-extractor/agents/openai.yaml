@@ -1,0 +1,7 @@
+interface:
+  display_name: "词汇训练归档"
+  short_description: "从词汇训练记录提取学习内容并幂等更新考研英语词汇档案"
+  default_prompt: "使用 $vocabulary-session-extractor 按来源游标增量读取用户提供的词汇训练记录，在当前项目工作目录中提取每日记录、单词详情、固定搭配和代表句，在每日记录中汇总必要的易错提醒，并幂等更新对应字母的表格目录分片。"
+
+policy:
+  allow_implicit_invocation: false

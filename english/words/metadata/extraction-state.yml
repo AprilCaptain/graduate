@@ -1,0 +1,10 @@
+version: 1
+
+processed_records:
+  2026-07-20-79c32dd8:
+    training_date: 2026-07-20
+    source: chatgpt-share-6a5db1cb-5114-83ea-bc47-10e7e2a54f2d
+    daily_file: daily/2026/07/2026-07-20.md
+    status: completed
+
+last_processed_record: 2026-07-20-79c32dd8
