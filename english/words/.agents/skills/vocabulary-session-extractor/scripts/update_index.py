@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
+import tempfile
 from pathlib import Path, PurePosixPath
 
 
@@ -18,6 +20,16 @@ ROOT_ROW_RE = re.compile(
 )
 SHARD_ROW_RE = re.compile(
     r"^\|\s*\[([^\]]+)\]\((\.\./entries/[a-z]/[^)]+\.md)\)\s*\|\s*(.*?)\s*\|$"
+)
+ROOT_HEADER_RE = re.compile(
+    r"^\|\s*首字母\s*\|\s*单词数量\s*\|\s*分目录\s*\|$"
+)
+ROOT_SEPARATOR_RE = re.compile(
+    r"^\|\s*:?-{3,}:?\s*\|\s*:?-{3,}:?\s*\|\s*:?-{3,}:?\s*\|$"
+)
+SHARD_HEADER_RE = re.compile(r"^\|\s*单词\s*\|\s*核心含义\s*\|$")
+SHARD_SEPARATOR_RE = re.compile(
+    r"^\|\s*:?-{3,}:?\s*\|\s*:?-{3,}:?\s*\|$"
 )
 
 
@@ -36,26 +48,66 @@ def parse_args() -> argparse.Namespace:
         default=".",
         help="Vocabulary archive root; defaults to the current directory",
     )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Do not write; fail if this update would change either index file",
+    )
     return parser.parse_args()
 
 
-def replace_region(text: str, start: str, end: str, body: str) -> str:
-    pattern = re.compile(
-        rf"{re.escape(start)}\n.*?\n{re.escape(end)}", re.DOTALL
+def region_pattern(start: str, end: str) -> re.Pattern[str]:
+    return re.compile(
+        rf"^{re.escape(start)}\n(.*?)\n{re.escape(end)}$",
+        re.DOTALL | re.MULTILINE,
     )
+
+
+def extract_region(text: str, start: str, end: str, label: str) -> str:
+    matches = list(region_pattern(start, end).finditer(text))
+    if len(matches) != 1:
+        raise ValueError(
+            f"{label} must contain exactly one {start!r}/{end!r} marker pair"
+        )
+    return matches[0].group(1)
+
+
+def replace_region(text: str, start: str, end: str, body: str) -> str:
+    pattern = region_pattern(start, end)
+    if len(list(pattern.finditer(text))) != 1:
+        raise ValueError("index marker validation must run before replacement")
     replacement = f"{start}\n{body.rstrip()}\n{end}"
-    if pattern.search(text):
-        return pattern.sub(replacement, text, count=1)
-    suffix = "" if text.endswith("\n") else "\n"
-    return f"{text}{suffix}\n{replacement}\n"
+    return pattern.sub(lambda _match: replacement, text, count=1)
 
 
-def write_if_changed(path: Path, content: str) -> None:
+def normalized_content(content: str) -> str:
+    return content.rstrip() + "\n"
+
+
+def atomic_write_if_changed(path: Path, content: str) -> bool:
     normalized = content.rstrip() + "\n"
     if path.exists() and path.read_text(encoding="utf-8") == normalized:
-        return
+        return False
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(normalized, encoding="utf-8")
+    file_descriptor, temporary_name = tempfile.mkstemp(
+        dir=path.parent,
+        prefix=f".{path.name}.",
+        suffix=".tmp",
+        text=True,
+    )
+    try:
+        with os.fdopen(file_descriptor, "w", encoding="utf-8", newline="\n") as stream:
+            stream.write(normalized)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary_name, path)
+    except BaseException:
+        try:
+            os.unlink(temporary_name)
+        except FileNotFoundError:
+            pass
+        raise
+    return True
 
 
 def default_root_index() -> str:
@@ -80,25 +132,49 @@ def default_shard(letter: str) -> str:
     )
 
 
-def parse_root_rows(text: str) -> dict[str, tuple[int, str]]:
+def table_lines(region: str) -> list[str]:
+    return [line for line in region.splitlines() if line.strip()]
+
+
+def parse_root_rows(region: str) -> dict[str, tuple[int, str]]:
+    lines = table_lines(region)
+    if len(lines) < 2 or not ROOT_HEADER_RE.fullmatch(lines[0]):
+        raise ValueError("root index marker region has an invalid table header")
+    if not ROOT_SEPARATOR_RE.fullmatch(lines[1]):
+        raise ValueError("root index marker region has an invalid separator row")
     rows: dict[str, tuple[int, str]] = {}
-    for line in text.splitlines():
+    for line in lines[2:]:
         match = ROOT_ROW_RE.match(line)
-        if match:
-            rows[match.group(1)] = (int(match.group(2)), match.group(3))
+        if not match:
+            raise ValueError(f"unrecognized root index row: {line}")
+        letter = match.group(1)
+        if letter in rows:
+            raise ValueError(f"duplicate root index letter: {letter}")
+        expected_link = f"./indexes/{letter.casefold()}.md"
+        if match.group(3) != expected_link:
+            raise ValueError(f"unexpected root index link for {letter}")
+        rows[letter] = (int(match.group(2)), match.group(3))
     return rows
 
 
-def parse_shard_rows(text: str) -> dict[str, tuple[str, str, str]]:
+def parse_shard_rows(region: str, letter: str) -> dict[str, tuple[str, str, str]]:
+    lines = table_lines(region)
+    if len(lines) < 2 or not SHARD_HEADER_RE.fullmatch(lines[0]):
+        raise ValueError("shard marker region has an invalid table header")
+    if not SHARD_SEPARATOR_RE.fullmatch(lines[1]):
+        raise ValueError("shard marker region has an invalid separator row")
     rows: dict[str, tuple[str, str, str]] = {}
-    for line in text.splitlines():
+    for line in lines[2:]:
         match = SHARD_ROW_RE.match(line)
-        if match:
-            rows[match.group(1).casefold()] = (
-                match.group(1),
-                match.group(2),
-                match.group(3),
-            )
+        if not match:
+            raise ValueError(f"unrecognized shard index row: {line}")
+        key = match.group(1).casefold()
+        if key in rows:
+            raise ValueError(f"duplicate shard word: {match.group(1)}")
+        expected_prefix = f"../entries/{letter}/"
+        if not match.group(2).startswith(expected_prefix):
+            raise ValueError(f"shard entry is outside entries/{letter}/")
+        rows[key] = (match.group(1), match.group(2), match.group(3))
     return rows
 
 
@@ -142,7 +218,13 @@ def main() -> int:
         if shard_path.exists()
         else default_shard(letter)
     )
-    shard_rows = parse_shard_rows(shard_text)
+    try:
+        shard_region = extract_region(
+            shard_text, SHARD_START, SHARD_END, f"indexes/{letter}.md"
+        )
+        shard_rows = parse_shard_rows(shard_region, letter)
+    except ValueError as exc:
+        raise SystemExit(f"error: {exc}") from exc
     shard_rows[word] = (word, f"../{entry}", meaning)
     shard_body = "\n".join(
         [
@@ -156,10 +238,12 @@ def main() -> int:
             ],
         ]
     )
-    write_if_changed(
-        shard_path,
-        replace_region(shard_text, SHARD_START, SHARD_END, shard_body),
-    )
+    try:
+        new_shard_text = replace_region(
+            shard_text, SHARD_START, SHARD_END, shard_body
+        )
+    except ValueError as exc:
+        raise SystemExit(f"error: {exc}") from exc
 
     root_index_path = root / "index.md"
     root_text = (
@@ -167,7 +251,13 @@ def main() -> int:
         if root_index_path.exists()
         else default_root_index()
     )
-    root_rows = parse_root_rows(root_text)
+    try:
+        root_region = extract_region(
+            root_text, ROOT_START, ROOT_END, "index.md"
+        )
+        root_rows = parse_root_rows(root_region)
+    except ValueError as exc:
+        raise SystemExit(f"error: {exc}") from exc
     root_rows[letter.upper()] = (
         len(shard_rows),
         f"./indexes/{letter}.md",
@@ -182,10 +272,30 @@ def main() -> int:
             ],
         ]
     )
-    write_if_changed(
-        root_index_path,
-        replace_region(root_text, ROOT_START, ROOT_END, root_body),
+    try:
+        new_root_text = replace_region(
+            root_text, ROOT_START, ROOT_END, root_body
+        )
+    except ValueError as exc:
+        raise SystemExit(f"error: {exc}") from exc
+
+    shard_changed = (
+        not shard_path.exists()
+        or shard_path.read_text(encoding="utf-8") != normalized_content(new_shard_text)
     )
+    root_changed = (
+        not root_index_path.exists()
+        or root_index_path.read_text(encoding="utf-8")
+        != normalized_content(new_root_text)
+    )
+    if args.check:
+        if shard_changed or root_changed:
+            print("error: index update would change archive files")
+            return 1
+        return 0
+
+    atomic_write_if_changed(shard_path, new_shard_text)
+    atomic_write_if_changed(root_index_path, new_root_text)
     return 0
 
 

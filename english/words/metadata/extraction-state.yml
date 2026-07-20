@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 processed_records:
   2026-07-20-79c32dd8:
@@ -6,5 +6,12 @@ processed_records:
     source: chatgpt-share-6a5db1cb-5114-83ea-bc47-10e7e2a54f2d
     daily_file: daily/2026/07/2026-07-20.md
     status: completed
+    content_fingerprint: sha256:25c74ce7f5dfae390eb632d952d49c3591d56be97de8444e035e20a5616d3e02
+    source_boundary_kind: message-range
+    source_start_message_id: 20a27eed-ee19-426c-ac56-21554f32972f
+    source_start_message_sha256: 71ed62e52eb9e4bdb130536669ea003fe765a5c1833bc591f28dfda35705df51
+    source_end_message_id: 31dafd56-aeb5-418c-8a08-19e8b0f24dc7
+    source_end_message_sha256: 59460c096555577278af003fe1b2b755bc7ca853dadb394ee9ec4492d1588f38
+    source_message_count: 51
 
 last_processed_record: 2026-07-20-79c32dd8

@@ -48,8 +48,13 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--cursor-info",
-        action="store_true",
-        help="Emit JSON metadata for the final message instead of message content",
+        nargs="?",
+        const="last",
+        metavar="MESSAGE_ID",
+        help=(
+            "Emit JSON metadata for MESSAGE_ID instead of message content; "
+            "omit the ID to inspect the final message"
+        ),
     )
     parser.add_argument(
         "--format",
@@ -227,7 +232,8 @@ def emit_markdown(messages: list[dict[str, Any]]) -> None:
         print(
             "<!-- message_id: "
             f"{message['id']} | role: {message['role']} | "
-            f"create_time: {message['create_time']} -->"
+            f"create_time: {message['create_time']} | "
+            f"content_sha256: {message['content_sha256']} -->"
         )
         print(message["content"])
         print()
@@ -241,11 +247,33 @@ def main() -> int:
         if not messages:
             raise ValueError("no text messages were found on the current branch")
         if args.cursor_info:
-            final = messages[-1]
+            if (
+                args.after_message_id
+                or args.after_content_sha256
+                or args.candidate_cursor
+            ):
+                raise ValueError(
+                    "--cursor-info cannot be combined with extraction cursors"
+                )
+            if args.cursor_info == "last":
+                target = messages[-1]
+            else:
+                target = next(
+                    (
+                        message
+                        for message in messages
+                        if message["id"] == args.cursor_info
+                    ),
+                    None,
+                )
+                if target is None:
+                    raise ValueError(
+                        "requested cursor-info message is not on the current branch"
+                    )
             print(
                 json.dumps(
                     {
-                        key: final[key]
+                        key: target[key]
                         for key in (
                             "id",
                             "role",

@@ -2,7 +2,6 @@
 word: "{{word}}"
 first_learned: "{{training_date}}"
 last_updated: "{{training_date}}"
-status: learning
 ---
 
 # {{word}}

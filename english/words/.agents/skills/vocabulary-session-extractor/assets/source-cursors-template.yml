@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 sources: {}
 
@@ -7,7 +7,17 @@ sources: {}
 #   chatgpt-share-<share-id>:
 #     kind: chatgpt-share
 #     location: https://chatgpt.com/share/<share-id>
-#     last_message_id: <message-id>
+#     last_message_id: <completed-summary-message-id>
 #     last_message_sha256: <sha256>
+#     last_record_id: YYYY-MM-DD-xxxxxxxx
+#     last_training_date: YYYY-MM-DD
+
+# 追加型文本来源示例：
+# sources:
+#   exported-vocabulary-session:
+#     kind: append-text
+#     location: sources/session.md
+#     last_byte_offset: <byte-offset>
+#     last_prefix_sha256: <sha256>
 #     last_record_id: YYYY-MM-DD-xxxxxxxx
 #     last_training_date: YYYY-MM-DD

@@ -104,6 +104,19 @@ def build_record_id(
     return f"{training_date}-{fingerprint}"
 
 
+def build_content_fingerprint(training_date: str, content: str) -> str:
+    """Hash exact normalized unit content without source-specific metadata."""
+    payload = {
+        "training_date": training_date,
+        "content": normalize_text(content),
+    }
+    canonical = json.dumps(
+        payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    )
+    digest = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+    return f"sha256:{digest}"
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Generate a stable record_id from one vocabulary training unit."
@@ -125,6 +138,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--new-word", action="append", default=[])
     parser.add_argument("--weak-word", action="append", default=[])
     parser.add_argument("--sentence", action="append", default=[])
+    parser.add_argument(
+        "--output",
+        choices=("id", "json"),
+        default="id",
+        help="Emit only record_id (default) or JSON with both stable identifiers",
+    )
     return parser.parse_args()
 
 
@@ -138,16 +157,28 @@ def main() -> int:
     if not normalize_text(content):
         print("error: normalized training content must not be empty", file=sys.stderr)
         return 2
-    print(
-        build_record_id(
-            args.date,
-            args.source,
-            content,
-            args.new_word,
-            args.weak_word,
-            args.sentence,
-        )
+    record_id = build_record_id(
+        args.date,
+        args.source,
+        content,
+        args.new_word,
+        args.weak_word,
+        args.sentence,
     )
+    content_fingerprint = build_content_fingerprint(args.date, content)
+    if args.output == "json":
+        print(
+            json.dumps(
+                {
+                    "content_fingerprint": content_fingerprint,
+                    "record_id": record_id,
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+            )
+        )
+    else:
+        print(record_id)
     return 0
 
 

@@ -1,4 +1,4 @@
-version: 1
+version: 2
 
 processed_records: {}
 
@@ -9,5 +9,12 @@ processed_records: {}
 #     source: pasted-chat-record
 #     daily_file: daily/YYYY/MM/YYYY-MM-DD.md
 #     status: completed
+#     content_fingerprint: sha256:<sha256>
+#     source_boundary_kind: message-range
+#     source_start_message_id: <message-id>
+#     source_start_message_sha256: <sha256>
+#     source_end_message_id: <completed-summary-message-id>
+#     source_end_message_sha256: <sha256>
+#     source_message_count: <positive-integer>
 
 last_processed_record: null
