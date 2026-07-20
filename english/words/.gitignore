@@ -1,0 +1,35 @@
+# IDE, editor, and Obsidian state
+.idea/
+.vscode/
+.obsidian/
+*.swp
+*.swo
+*~
+
+# Python-generated files and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environment, logs, and temporary files
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+*.temp
+.cache/
+tmp/
+temp/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
