@@ -8,3 +8,10 @@ sources:
     last_message_sha256: 59460c096555577278af003fe1b2b755bc7ca853dadb394ee9ec4492d1588f38
     last_record_id: 2026-07-20-79c32dd8
     last_training_date: 2026-07-20
+  chatgpt-share-6a60cf47-43fc-83ea-a96b-55997b8613f0:
+    kind: chatgpt-share
+    location: https://chatgpt.com/share/6a60cf47-43fc-83ea-a96b-55997b8613f0
+    last_record_id: 2026-07-22-a63212be
+    last_training_date: 2026-07-22
+    last_message_id: 7707e36c-c58c-454e-938f-a9e3adc8a222
+    last_message_sha256: eaf190214819f83d0ec2d28f164d8d284b7bb3653cee8570f6a610fb742cc79d

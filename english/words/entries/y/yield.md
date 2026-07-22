@@ -1,7 +1,7 @@
 ---
 word: "yield"
 first_learned: "2026-07-20"
-last_updated: "2026-07-20"
+last_updated: "2026-07-22"
 ---
 
 # yield
@@ -58,3 +58,4 @@ The company refused to yield to public pressure.
 ## 学习记录
 
 - 2026-07-20 · 新词 · chatgpt-share-6a5db1cb-5114-83ea-bc47-10e7e2a54f2d <!-- record_id: 2026-07-20-79c32dd8 -->
+- 2026-07-22 · 复习 · chatgpt-share-6a60cf47-43fc-83ea-a96b-55997b8613f0 <!-- record_id: 2026-07-22-a63212be -->
