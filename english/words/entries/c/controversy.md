@@ -1,7 +1,7 @@
 ---
 word: "controversy"
 first_learned: "2026-07-22"
-last_updated: "2026-07-22"
+last_updated: "2026-07-23"
 ---
 
 # controversy
@@ -47,3 +47,4 @@ The new policy has caused considerable controversy.
 ## 学习记录
 
 - 2026-07-22 · 新词 · chatgpt-share-6a60cf47-43fc-83ea-a96b-55997b8613f0 <!-- record_id: 2026-07-22-a63212be -->
+- 2026-07-23 · 复习 · chatgpt-share-6a6225a1-07cc-83ea-8d6b-942405e4cf66 <!-- record_id: 2026-07-23-4785ef70 -->
