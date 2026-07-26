@@ -17,7 +17,8 @@
 
 | 单词 | 核心含义 |
 |---|---|
-| [{{word}}]({{relative_word_path}}) | {{core_meanings}} |
+| [{{word}}]({{relative_word_path}}) | {{part_of_speech}}：{{core_meaning}} |
+<!-- 多词性时仍只保留一个单词行，在“核心含义”单元格中按详情文件顺序写为“{{part_of_speech_1}}：{{core_meaning_1}}<br>{{part_of_speech_2}}：{{core_meaning_2}}”。 -->
 
 ### 复习单词
 

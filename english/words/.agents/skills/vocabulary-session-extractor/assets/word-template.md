@@ -11,6 +11,7 @@ last_updated: "{{training_date}}"
 | 词性 | 核心含义 |
 |---|---|
 | {{part_of_speech}} | {{core_meaning}} |
+<!-- 多词性时继续追加表格行，每行只写一种词性。 -->
 
 ## 常用搭配
 

@@ -9,5 +9,7 @@
 | [illiterate](../entries/i/illiterate.md) | 不识字的；文盲 |
 | [illustrate](../entries/i/illustrate.md) | 说明；阐明 |
 | [immediate](../entries/i/immediate.md) | 立即的；直接的 |
+| [implement](../entries/i/implement.md) | 实施；执行 |
+| [instinct](../entries/i/instinct.md) | 本能；直觉 |
 | [intellect](../entries/i/intellect.md) | 智力；理解力 |
 <!-- vocabulary-table:end -->

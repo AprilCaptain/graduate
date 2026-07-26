@@ -37,5 +37,29 @@ processed_records:
     source_end_message_id: 194349ae-1d09-4f52-97db-39da80602672
     source_end_message_sha256: 5d94ca8f096276c33da1ff0aa046f2da22e1a18618fa67ff73dd21e499179787
     source_message_count: 55
+  2026-07-25-fe0c5eb1:
+    training_date: 2026-07-25
+    source: chatgpt-share-6a64cb5f-9e68-83ea-89a5-610e2506d0fc
+    daily_file: daily/2026/07/2026-07-25.md
+    status: completed
+    content_fingerprint: sha256:4bf1e184139b964451cae237567081560504bd4f1822585ff3098818881d298f
+    source_boundary_kind: message-range
+    source_start_message_id: 47cbcebf-36a4-4fbd-ab4c-392ab83ab656
+    source_start_message_sha256: d421be0efa800c71432c4daa13a741cc0242625fbd2a0427661578ac2ab65c9d
+    source_end_message_id: 25aa535a-bf03-425b-bd59-10e5fb863515
+    source_end_message_sha256: e552374e2307861d77525eafffbd24eaf91f5dbe8d2f8900bfb7229f2ef950bc
+    source_message_count: 61
+  2026-07-26-0cb74c4a:
+    training_date: 2026-07-26
+    source: chatgpt-share-6a6610f3-c070-83ea-b7a5-3ef8817e77ad
+    daily_file: daily/2026/07/2026-07-26.md
+    status: completed
+    content_fingerprint: sha256:2af8d6ac088279cda37a793ea9ce500d56d8cc618bfd8973b6e5e355253a590b
+    source_boundary_kind: message-range
+    source_start_message_id: 5574b145-efd1-4ef9-aff4-ec5eaa66acda
+    source_start_message_sha256: bc7675cde96daf6d49f221dbf1ed4f0c10a4e7e6919f4047a01768f6c5a96abb
+    source_end_message_id: 3cb0acfb-6146-4712-8cfb-08be4c7db939
+    source_end_message_sha256: fe5af602a6ec851a9b09606043703bd3fddbc3833e7622020ced351979b9be47
+    source_message_count: 78
 
-last_processed_record: 2026-07-23-4785ef70
+last_processed_record: 2026-07-26-0cb74c4a

@@ -1,7 +1,7 @@
 ---
 word: "coalition"
 first_learned: "2026-07-23"
-last_updated: "2026-07-23"
+last_updated: "2026-07-25"
 ---
 
 # coalition
@@ -44,6 +44,31 @@ Several organizations formed a coalition to oppose the plan.
 |---|---|
 | form a coalition | 组成联盟 |
 
+### 2026-07-25 · 2026-07-25-fe0c5eb1
+
+#### 原句
+
+Several local groups formed a coalition to protect the river.
+
+#### 参考译文
+
+几个当地团体组成联盟来保护河流。
+
+#### 结构对照
+
+| 英文片段 | 句子作用 | 对应含义 |
+|---|---|---|
+| Several local groups | 主语 | 几个当地团体 |
+| formed a coalition | 谓语和宾语 | 组成了联盟 |
+| to protect the river | 目的状语 | 为了保护河流 |
+
+#### 搭配与词义
+
+| 内容 | 说明 |
+|---|---|
+| form a coalition | 组成联盟 |
+
 ## 学习记录
 
 - 2026-07-23 · 新词 · chatgpt-share-6a6225a1-07cc-83ea-8d6b-942405e4cf66 <!-- record_id: 2026-07-23-4785ef70 -->
+- 2026-07-25 · 复习 · chatgpt-share-6a64cb5f-9e68-83ea-89a5-610e2506d0fc <!-- record_id: 2026-07-25-fe0c5eb1 -->

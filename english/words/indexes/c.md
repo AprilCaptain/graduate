@@ -7,6 +7,7 @@
 |---|---|
 | [capable](../entries/c/capable.md) | 有能力的；能够……的 |
 | [coalition](../entries/c/coalition.md) | 联盟；联合体 |
+| [coherent](../entries/c/coherent.md) | 连贯的；一致的 |
 | [constituent](../entries/c/constituent.md) | 组成部分；选民 |
 | [contempt](../entries/c/contempt.md) | 轻视；蔑视 |
 | [contend](../entries/c/contend.md) | 竞争；主张，声称 |
@@ -17,4 +18,5 @@
 | [convey](../entries/c/convey.md) | 传达；表达 |
 | [coordinate](../entries/c/coordinate.md) | 协调；统筹 |
 | [correlate](../entries/c/correlate.md) | 相互关联；相关 |
+| [council](../entries/c/council.md) | 委员会；理事会 |
 <!-- vocabulary-table:end -->

@@ -180,6 +180,25 @@ def validate_entries(root: Path, errors: list[str]) -> dict[str, Path]:
             rows = table_rows(core)
             if len(rows) < 3 or rows[0] != ("词性", "核心含义"):
                 errors.append(f"{label}: 核心词义 must be a two-column standard table")
+            else:
+                seen_parts_of_speech: set[str] = set()
+                for part_of_speech, meaning in rows[2:]:
+                    normalized_part = normalize(part_of_speech)
+                    if (
+                        not part_of_speech
+                        or not meaning
+                        or "/" in part_of_speech
+                        or "<br" in part_of_speech.casefold()
+                    ):
+                        errors.append(
+                            f"{label}: each 核心词义 row must contain exactly "
+                            "one part of speech and its meaning"
+                        )
+                    if normalized_part in seen_parts_of_speech:
+                        errors.append(
+                            f"{label}: duplicate part of speech {part_of_speech!r}"
+                        )
+                    seen_parts_of_speech.add(normalized_part)
         collocations = section(text, "常用搭配")
         if collocations:
             seen_collocations: set[str] = set()
@@ -270,8 +289,19 @@ def validate_indexes(
             errors.append(f"indexes/: entries missing from index: {', '.join(missing)}")
 
 
-def validate_daily(root: Path, errors: list[str]) -> set[str]:
+def validate_daily(
+    root: Path, entries: dict[str, Path], errors: list[str]
+) -> set[str]:
     record_ids: set[str] = set()
+    entry_parts_of_speech: dict[str, tuple[str, ...]] = {}
+    for word, path in entries.items():
+        core = section(path.read_text(encoding="utf-8"), "核心词义")
+        if core is None:
+            continue
+        rows = table_rows(core)
+        if len(rows) >= 3 and rows[0] == ("词性", "核心含义"):
+            entry_parts_of_speech[word] = tuple(row[0] for row in rows[2:])
+
     for path in sorted((root / "daily").glob("**/*.md")):
         label = path.relative_to(root).as_posix()
         text = path.read_text(encoding="utf-8")
@@ -290,6 +320,49 @@ def validate_daily(root: Path, errors: list[str]) -> set[str]:
             rows = table_rows(new_words)
             if len(rows) < 2 or rows[0] != ("单词", "核心含义"):
                 errors.append(f"{label}: 新学单词 must use a two-column table")
+            else:
+                seen_words: set[str] = set()
+                for word_cell, meaning_cell in rows[2:]:
+                    word_match = re.fullmatch(
+                        r"\[([^\]]+)]\([^)]+\)", word_cell
+                    )
+                    if not word_match:
+                        errors.append(
+                            f"{label}: 新学单词 row must begin with a word link"
+                        )
+                        continue
+                    word = word_match.group(1)
+                    word_key = word.casefold()
+                    if word_key in seen_words:
+                        errors.append(
+                            f"{label}: duplicate 新学单词 row for {word!r}"
+                        )
+                    seen_words.add(word_key)
+
+                    daily_parts: list[str] = []
+                    for item in re.split(
+                        r"<br\s*/?>", meaning_cell, flags=re.IGNORECASE
+                    ):
+                        meaning_match = re.fullmatch(r"\s*([^：]+)：(.+?)\s*", item)
+                        if not meaning_match:
+                            errors.append(
+                                f"{label}: {word!r} 核心含义 items must use "
+                                "'词性：含义' format"
+                            )
+                            daily_parts = []
+                            break
+                        daily_parts.append(meaning_match.group(1).strip())
+
+                    expected_parts = entry_parts_of_speech.get(word_key)
+                    if expected_parts is None:
+                        errors.append(
+                            f"{label}: 新学单词 has no readable entry: {word!r}"
+                        )
+                    elif daily_parts and tuple(daily_parts) != expected_parts:
+                        errors.append(
+                            f"{label}: {word!r} parts of speech do not match "
+                            "its entry"
+                        )
             if re.search(r"^\s*[-*+]\s+\[[^\]]+]\(", new_words, re.MULTILINE):
                 errors.append(f"{label}: 新学单词 contains a bullet entry")
     return record_ids
@@ -485,7 +558,7 @@ def main() -> int:
     errors: list[str] = []
     entries = validate_entries(root, errors)
     validate_indexes(root, entries, errors)
-    daily_record_ids = validate_daily(root, errors)
+    daily_record_ids = validate_daily(root, entries, errors)
     validate_metadata(root, daily_record_ids, errors)
     markdown_paths = [
         root / "index.md",

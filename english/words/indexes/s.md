@@ -6,6 +6,13 @@
 | 单词 | 核心含义 |
 |---|---|
 | [saturate](../entries/s/saturate.md) | 使充满；使饱和 |
+| [scholar](../entries/s/scholar.md) | 学者 |
 | [statistical](../entries/s/statistical.md) | 统计的；统计学的 |
+| [stereotype](../entries/s/stereotype.md) | 刻板印象；形成固定看法 |
 | [strike](../entries/s/strike.md) | 打击；突然想到；罢工 |
+| [submission](../entries/s/submission.md) | 提交；提交的材料 |
+| [subsidiary](../entries/s/subsidiary.md) | 子公司；附属的 |
+| [sufficient](../entries/s/sufficient.md) | 足够的；充分的 |
+| [supreme](../entries/s/supreme.md) | 最高的；至高无上的 |
+| [surface](../entries/s/surface.md) | 表面；表层；出现 |
 <!-- vocabulary-table:end -->
