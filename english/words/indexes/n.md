@@ -6,4 +6,5 @@
 | 单词 | 核心含义 |
 |---|---|
 | [neurology](../entries/n/neurology.md) | 神经病学 |
+| [nondurable](../entries/n/nondurable.md) | 不耐用的；非耐用品的 |
 <!-- vocabulary-table:end -->

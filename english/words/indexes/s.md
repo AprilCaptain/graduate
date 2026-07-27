@@ -15,4 +15,6 @@
 | [sufficient](../entries/s/sufficient.md) | 足够的；充分的 |
 | [supreme](../entries/s/supreme.md) | 最高的；至高无上的 |
 | [surface](../entries/s/surface.md) | 表面；表层；出现 |
+| [susceptible](../entries/s/susceptible.md) | 易受影响的；易患病的 |
+| [syndrome](../entries/s/syndrome.md) | 综合征；一组同时出现的症状 |
 <!-- vocabulary-table:end -->

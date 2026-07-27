@@ -174,7 +174,7 @@ def content_preflight(root: Path) -> list[str]:
     errors: list[str] = []
     entries = validate_archive.validate_entries(root, errors)
     validate_archive.validate_indexes(root, entries, errors)
-    validate_archive.validate_daily(root, errors)
+    validate_archive.validate_daily(root, entries, errors)
     for path in [
         root / "index.md",
         *sorted((root / "indexes").glob("*.md")),
@@ -341,7 +341,7 @@ def main() -> int:
     postflight_errors: list[str] = []
     entries = validate_archive.validate_entries(root, postflight_errors)
     validate_archive.validate_indexes(root, entries, postflight_errors)
-    daily_ids = validate_archive.validate_daily(root, postflight_errors)
+    daily_ids = validate_archive.validate_daily(root, entries, postflight_errors)
     validate_archive.validate_metadata(root, daily_ids, postflight_errors)
     if postflight_errors:
         for error in postflight_errors:

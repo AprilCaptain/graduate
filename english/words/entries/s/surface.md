@@ -1,7 +1,7 @@
 ---
 word: "surface"
 first_learned: "2026-07-26"
-last_updated: "2026-07-26"
+last_updated: "2026-07-27"
 ---
 
 # surface
@@ -46,6 +46,31 @@ The problem may appear simple on the surface, but it is actually complex.
 |---|---|
 | on the surface | 抽象用法，表示“表面上” |
 
+### 2026-07-27 · 2026-07-27-87fbaa4a
+
+#### 原句
+
+Several unexpected problems surfaced during the experiment.
+
+#### 参考译文
+
+实验期间出现了几个意料之外的问题。
+
+#### 结构对照
+
+| 英文片段 | 句子作用 | 对应含义 |
+|---|---|---|
+| Several unexpected problems | 主语 | 几个意料之外的问题 |
+| surfaced | 谓语 | 出现了 |
+| during the experiment | 时间状语 | 实验期间 |
+
+#### 搭配与词义
+
+| 内容 | 说明 |
+|---|---|
+| surface | 此处作动词，表示“出现、暴露出来” |
+
 ## 学习记录
 
 - 2026-07-26 · 新词 · chatgpt-share-6a6610f3-c070-83ea-b7a5-3ef8817e77ad <!-- record_id: 2026-07-26-0cb74c4a -->
+- 2026-07-27 · 复习 · chatgpt-share-6a676996-9064-83ea-af45-76fb561dccc0 <!-- record_id: 2026-07-27-87fbaa4a -->

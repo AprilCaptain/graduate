@@ -1,7 +1,7 @@
 ---
 word: "deduce"
 first_learned: "2026-07-26"
-last_updated: "2026-07-26"
+last_updated: "2026-07-27"
 ---
 
 # deduce
@@ -45,6 +45,31 @@ By examining the data, researchers deduced that the change was caused by climate
 |---|---|
 | be caused by | 由……导致 |
 
+### 2026-07-27 · 2026-07-27-87fbaa4a
+
+#### 原句
+
+From the evidence, the police deduced that the fire had started in the kitchen.
+
+#### 参考译文
+
+警方根据证据推断，火灾是从厨房开始的。
+
+#### 结构对照
+
+| 英文片段 | 句子作用 | 对应含义 |
+|---|---|---|
+| From the evidence | 依据状语 | 根据证据 |
+| the police deduced | 主句主干 | 警方推断 |
+| that the fire had started in the kitchen | 宾语从句 | 火灾是从厨房开始的 |
+
+#### 搭配与词义
+
+| 内容 | 说明 |
+|---|---|
+| deduce that... | 推断出…… |
+
 ## 学习记录
 
 - 2026-07-26 · 新词 · chatgpt-share-6a6610f3-c070-83ea-b7a5-3ef8817e77ad <!-- record_id: 2026-07-26-0cb74c4a -->
+- 2026-07-27 · 复习 · chatgpt-share-6a676996-9064-83ea-af45-76fb561dccc0 <!-- record_id: 2026-07-27-87fbaa4a -->

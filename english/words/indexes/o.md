@@ -8,4 +8,5 @@
 | [oblige](../entries/o/oblige.md) | 迫使；使有义务 |
 | [optimistic](../entries/o/optimistic.md) | 乐观的 |
 | [orchestra](../entries/o/orchestra.md) | 管弦乐队 |
+| [ornament](../entries/o/ornament.md) | 装饰品；装饰 |
 <!-- vocabulary-table:end -->

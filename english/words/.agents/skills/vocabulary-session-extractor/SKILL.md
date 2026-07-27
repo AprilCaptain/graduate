@@ -38,6 +38,7 @@ description: 从用户提供的考研英语词汇训练聊天记录、导出文�
 10. 先创建或最小更新单词详情，再更新当日训练章节。单个词用 `scripts/update_index.py`，多个词用 `scripts/update_indexes_batch.py`，保证每个受影响字母分片只读写一次、根目录只更新一次。确保写入的链接真实存在。
 11. 保留人工备注、译文、释义、章节、标签和非标准但有效的内容。只补充缺失或有新证据的部分，不要整文件重写。
 12. 运行 `scripts/validate_archive.py`，检查重复句子、搭配、单词条目、分片计数、链接、Markdown、YAML、元数据边界和本次文件差异。
+    修改本 Skill 的 `scripts/` 后，另运行 `python3 -m unittest discover -s .agents/skills/vocabulary-session-extractor/tests -p 'test_*.py'`；日常归档无需重复运行该回归测试。
 13. 所有内容文件成功写入且验证通过后，使用 `scripts/finalize_metadata.py` 写入归档状态并将来源游标推进到已成功归档单元的结束总结消息。脚本会拒绝重复内容指纹、陈旧游标和不一致元数据；相同任务再次执行应产生零文件差异。
 
 ## 更新原则

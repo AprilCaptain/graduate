@@ -12,5 +12,7 @@
 | [accompany](../entries/a/accompany.md) | 陪伴；伴随 |
 | [accustom](../entries/a/accustom.md) | 使习惯于 |
 | [acknowledge](../entries/a/acknowledge.md) | 承认；认可；意识到 |
+| [adapt](../entries/a/adapt.md) | 适应；改编 |
+| [adhere](../entries/a/adhere.md) | 坚持；遵守；粘附 |
 | [allowance](../entries/a/allowance.md) | 津贴；补助 |
 <!-- vocabulary-table:end -->

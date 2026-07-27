@@ -7,4 +7,5 @@
 |---|---|
 | [magnificent](../entries/m/magnificent.md) | 壮丽的；宏伟的；极好的 |
 | [manipulate](../entries/m/manipulate.md) | 操纵；控制 |
+| [mature](../entries/m/mature.md) | 成熟的；成熟 |
 <!-- vocabulary-table:end -->

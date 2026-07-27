@@ -1,7 +1,7 @@
 ---
 word: "coherent"
 first_learned: "2026-07-26"
-last_updated: "2026-07-26"
+last_updated: "2026-07-27"
 ---
 
 # coherent
@@ -46,6 +46,31 @@ The writer presented a coherent argument based on evidence.
 |---|---|
 | coherent | 强调各部分有逻辑联系，不等于 continuous |
 
+### 2026-07-27 · 2026-07-27-87fbaa4a
+
+#### 原句
+
+Although the report contains useful facts, its main argument is not coherent.
+
+#### 参考译文
+
+虽然这份报告包含一些有用的事实，但它的主要论证并不连贯。
+
+#### 结构对照
+
+| 英文片段 | 句子作用 | 对应含义 |
+|---|---|---|
+| Although the report contains useful facts | 让步从句 | 虽然报告包含有用的事实 |
+| its main argument | 主句主语 | 它的主要论证 |
+| is not coherent | 系表结构 | 并不连贯 |
+
+#### 搭配与词义
+
+| 内容 | 说明 |
+|---|---|
+| coherent | 强调论证前后有逻辑、条理一致 |
+
 ## 学习记录
 
 - 2026-07-26 · 新词 · chatgpt-share-6a6610f3-c070-83ea-b7a5-3ef8817e77ad <!-- record_id: 2026-07-26-0cb74c4a -->
+- 2026-07-27 · 复习 · chatgpt-share-6a676996-9064-83ea-af45-76fb561dccc0 <!-- record_id: 2026-07-27-87fbaa4a -->

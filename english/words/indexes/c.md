@@ -6,8 +6,10 @@
 | 单词 | 核心含义 |
 |---|---|
 | [capable](../entries/c/capable.md) | 有能力的；能够……的 |
+| [claim](../entries/c/claim.md) | 声称；主张；索赔 |
 | [coalition](../entries/c/coalition.md) | 联盟；联合体 |
 | [coherent](../entries/c/coherent.md) | 连贯的；一致的 |
+| [collaboration](../entries/c/collaboration.md) | 合作；协作 |
 | [constituent](../entries/c/constituent.md) | 组成部分；选民 |
 | [contempt](../entries/c/contempt.md) | 轻视；蔑视 |
 | [contend](../entries/c/contend.md) | 竞争；主张，声称 |
