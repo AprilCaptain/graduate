@@ -1,7 +1,7 @@
 ---
 word: "adhere"
 first_learned: "2026-07-27"
-last_updated: "2026-07-27"
+last_updated: "2026-07-28"
 ---
 
 # adhere
@@ -48,3 +48,4 @@ All employees must adhere to the company's safety rules.
 ## 学习记录
 
 - 2026-07-27 · 新词 · chatgpt-share-6a676996-9064-83ea-af45-76fb561dccc0 <!-- record_id: 2026-07-27-87fbaa4a -->
+- 2026-07-28 · 复习 · chatgpt-share-6a6a157c-3870-83ea-9754-483ee22e3026 <!-- record_id: 2026-07-28-15dd85b8 -->

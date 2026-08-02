@@ -11,6 +11,8 @@
 | [immediate](../entries/i/immediate.md) | 立即的；直接的 |
 | [implement](../entries/i/implement.md) | 实施；执行 |
 | [indefensible](../entries/i/indefensible.md) | 无法辩护的；站不住脚的 |
+| [ineffective](../entries/i/ineffective.md) | 无效的；不起作用的 |
 | [instinct](../entries/i/instinct.md) | 本能；直觉 |
 | [intellect](../entries/i/intellect.md) | 智力；理解力 |
+| [irrational](../entries/i/irrational.md) | 不理性的；不合逻辑的 |
 <!-- vocabulary-table:end -->

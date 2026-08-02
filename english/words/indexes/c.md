@@ -6,6 +6,7 @@
 | 单词 | 核心含义 |
 |---|---|
 | [capable](../entries/c/capable.md) | 有能力的；能够……的 |
+| [character](../entries/c/character.md) | 性格；人物 |
 | [claim](../entries/c/claim.md) | 声称；主张；索赔 |
 | [coalition](../entries/c/coalition.md) | 联盟；联合体 |
 | [coherent](../entries/c/coherent.md) | 连贯的；一致的 |

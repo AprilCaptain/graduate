@@ -18,6 +18,11 @@ RECORD_RE = re.compile(r"<!--\s*record_id:\s*([^\s]+)\s*-->")
 FINGERPRINT_RE = re.compile(r"sha256:[0-9a-f]{64}")
 DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}")
 TABLE_ROW_RE = re.compile(r"^\|\s*(.*?)\s*\|\s*(.*?)\s*\|$")
+DAILY_SENTENCE_RE = re.compile(
+    r"^(\d+)\. \*\*原句\*\*：(\S.*?)<br>$\n"
+    r"^[ \t]+\*\*译文\*\*：(\S.*?)$",
+    re.MULTILINE,
+)
 
 
 def parse_args() -> argparse.Namespace:
@@ -365,6 +370,33 @@ def validate_daily(
                         )
             if re.search(r"^\s*[-*+]\s+\[[^\]]+]\(", new_words, re.MULTILINE):
                 errors.append(f"{label}: 新学单词 contains a bullet entry")
+
+        sentence_sections = re.findall(
+            r"^### 代表性训练句\s*$\n(.*?)(?=^### |\Z)",
+            text,
+            re.MULTILINE | re.DOTALL,
+        )
+        training_count = len(
+            re.findall(r"^## 第\d+次训练\s*$", text, re.MULTILINE)
+        )
+        if len(sentence_sections) != training_count:
+            errors.append(
+                f"{label}: expected one 代表性训练句 section per training"
+            )
+        for sentence_section in sentence_sections:
+            numbered_items = re.findall(r"^\d+\.\s+.+$", sentence_section, re.MULTILINE)
+            sentence_pairs = DAILY_SENTENCE_RE.findall(sentence_section)
+            if not numbered_items or len(sentence_pairs) != len(numbered_items):
+                errors.append(
+                    f"{label}: each 代表性训练句 item must use paired "
+                    "'**原句**：...<br>' and '**译文**：...' lines"
+                )
+                continue
+            for _number, _sentence, translation in sentence_pairs:
+                if not re.search(r"[\u3400-\u9fff]", translation):
+                    errors.append(
+                        f"{label}: each 代表性训练句 translation must contain Chinese"
+                    )
     return record_ids
 
 

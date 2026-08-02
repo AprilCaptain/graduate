@@ -43,3 +43,24 @@ sources:
     last_training_date: 2026-07-27
     last_message_id: 8329d2e5-c468-4420-9233-dfa6c0233d92
     last_message_sha256: 3083bfbb0e8c81312b2fcec4f6149aa98a6d6885d080136e647a7eeee42243ee
+  chatgpt-share-6a6a157c-3870-83ea-9754-483ee22e3026:
+    kind: chatgpt-share
+    location: https://chatgpt.com/share/6a6a157c-3870-83ea-9754-483ee22e3026
+    last_record_id: 2026-07-28-15dd85b8
+    last_training_date: 2026-07-28
+    last_message_id: f258c228-5ff0-42e0-b15e-c88a4f221dc3
+    last_message_sha256: 451a8f3bc9161084c5c5a65751bf26796fff245a62aaffb6f192633af4c3b490
+  chatgpt-share-6a6e1907-938c-83ea-ae40-2b53940d101e:
+    kind: chatgpt-share
+    location: https://chatgpt.com/share/6a6e1907-938c-83ea-ae40-2b53940d101e
+    last_record_id: 2026-08-01-49b2e38a
+    last_training_date: 2026-08-01
+    last_message_id: b342b691-7f2f-4858-a16b-143834aafd12
+    last_message_sha256: d9810fc22081cfe3c1303aa5feb7dc9fe5df1a0b818edcaa0accb7ee555fff18
+  chatgpt-share-6a6f438b-105c-83ea-897f-07d132d54571:
+    kind: chatgpt-share
+    location: https://chatgpt.com/share/6a6f438b-105c-83ea-897f-07d132d54571
+    last_record_id: 2026-08-02-875f23c4
+    last_training_date: 2026-08-02
+    last_message_id: d887f394-2ca7-497d-a279-b8373a179d17
+    last_message_sha256: b4d23f2d1bc72f253bb266b3a8bd6decb5608571993bfd0047b04aee7c657df9

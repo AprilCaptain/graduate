@@ -14,5 +14,9 @@
 | [acknowledge](../entries/a/acknowledge.md) | 承认；认可；意识到 |
 | [adapt](../entries/a/adapt.md) | 适应；改编 |
 | [adhere](../entries/a/adhere.md) | 坚持；遵守；粘附 |
+| [admission](../entries/a/admission.md) | 录取；承认 |
+| [adult](../entries/a/adult.md) | 成年人；成年的 |
 | [allowance](../entries/a/allowance.md) | 津贴；补助 |
+| [apology](../entries/a/apology.md) | 道歉；歉意 |
+| [appreciative](../entries/a/appreciative.md) | 感激的；赞赏的 |
 <!-- vocabulary-table:end -->

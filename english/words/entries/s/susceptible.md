@@ -1,7 +1,7 @@
 ---
 word: "susceptible"
 first_learned: "2026-07-27"
-last_updated: "2026-07-27"
+last_updated: "2026-07-28"
 ---
 
 # susceptible
@@ -44,6 +44,31 @@ Older people are often more susceptible to extreme temperatures.
 |---|---|
 | susceptible to + 名词 | 容易受到某事物影响 |
 
+### 2026-07-28 · 2026-07-28-15dd85b8
+
+#### 原句
+
+Young children are particularly susceptible to misleading information online.
+
+#### 参考译文
+
+年幼的孩子尤其容易受到网上误导性信息的影响。
+
+#### 结构对照
+
+| 英文片段 | 句子作用 | 对应含义 |
+|---|---|---|
+| Young children | 主语 | 年幼的孩子 |
+| are particularly susceptible to | 系表结构 | 尤其容易受到……影响 |
+| misleading information online | 介词宾语 | 网上误导性信息 |
+
+#### 搭配与词义
+
+| 内容 | 说明 |
+|---|---|
+| be susceptible to | 容易受到……影响 |
+
 ## 学习记录
 
 - 2026-07-27 · 新词 · chatgpt-share-6a676996-9064-83ea-af45-76fb561dccc0 <!-- record_id: 2026-07-27-87fbaa4a -->
+- 2026-07-28 · 复习 · chatgpt-share-6a6a157c-3870-83ea-9754-483ee22e3026 <!-- record_id: 2026-07-28-15dd85b8 -->

@@ -107,6 +107,11 @@ class FinalizeMetadataEndToEndTest(unittest.TestCase):
             | 单词 | 核心含义 |
             |---|---|
             | [adapt](../../../entries/a/adapt.md) | v.：适应 |
+
+            ### 代表性训练句
+
+            1. **原句**：People must adapt to changing conditions.<br>
+               **译文**：人们必须适应不断变化的环境。
             """,
         )
         self._write(

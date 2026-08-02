@@ -7,6 +7,11 @@
 |---|---|
 | [paralyse](../entries/p/paralyse.md) | 使瘫痪；使无法行动 |
 | [patent](../entries/p/patent.md) | 专利；专利的 |
+| [peer](../entries/p/peer.md) | 同龄人；同行 |
+| [perpetual](../entries/p/perpetual.md) | 永久的；持续不断的 |
+| [perplex](../entries/p/perplex.md) | 使困惑；使费解 |
+| [perspective](../entries/p/perspective.md) | 视角；观点 |
+| [prohibition](../entries/p/prohibition.md) | 禁止；禁令 |
 | [provision](../entries/p/provision.md) | 条款；规定 |
 | [psychiatry](../entries/p/psychiatry.md) | 精神病学 |
 <!-- vocabulary-table:end -->
