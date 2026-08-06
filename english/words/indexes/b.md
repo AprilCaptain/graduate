@@ -1,10 +1,9 @@
-# V
+# B
 
 [返回词汇总目录](../index.md)
 
 <!-- vocabulary-table:start -->
 | 单词 | 核心含义 |
 |---|---|
-| [virtue](../entries/v/virtue.md) | 优点；美德 |
-| [volatile](../entries/v/volatile.md) | 不稳定的；易变化的 |
+| [blaze](../entries/b/blaze.md) | 火焰；猛烈燃烧 |
 <!-- vocabulary-table:end -->

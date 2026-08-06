@@ -8,6 +8,7 @@
 | [elaborate](../entries/e/elaborate.md) | 复杂而详尽的；详细说明 |
 | [eliminate](../entries/e/eliminate.md) | 消除；排除 |
 | [embrace](../entries/e/embrace.md) | 接受；拥抱；欣然采用 |
+| [emit](../entries/e/emit.md) | 发出；散发；排放 |
 | [empirical](../entries/e/empirical.md) | 以观察或经验为依据的；实证的 |
 | [encompass](../entries/e/encompass.md) | 包含；涵盖 |
 | [encounter](../entries/e/encounter.md) | 遇到；遭遇；相遇 |

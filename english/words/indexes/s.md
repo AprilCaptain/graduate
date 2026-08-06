@@ -9,6 +9,7 @@
 | [saturate](../entries/s/saturate.md) | 使充满；使饱和 |
 | [scholar](../entries/s/scholar.md) | 学者 |
 | [set](../entries/s/set.md) | 设置；制定；一套 |
+| [sophisticated](../entries/s/sophisticated.md) | 精密的；复杂的；先进的 |
 | [statistical](../entries/s/statistical.md) | 统计的；统计学的 |
 | [stereotype](../entries/s/stereotype.md) | 刻板印象；形成固定看法 |
 | [strike](../entries/s/strike.md) | 打击；突然想到；罢工 |

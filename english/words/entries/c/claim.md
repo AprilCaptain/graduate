@@ -1,7 +1,7 @@
 ---
 word: "claim"
 first_learned: "2026-07-27"
-last_updated: "2026-07-28"
+last_updated: "2026-08-06"
 ---
 
 # claim
@@ -70,7 +70,32 @@ The report claims that the new policy will reduce unnecessary costs.
 |---|---|
 | claim that... | 声称……；翻译时不要漏掉主句谓语 |
 
+### 2026-08-06 · 2026-08-06-be5e7873
+
+#### 原句
+
+The company claims that the new device can reduce energy use by 20 percent.
+
+#### 参考译文
+
+这家公司声称，这种新设备可以将能源使用量降低20%。
+
+#### 结构对照
+
+| 英文片段 | 句子作用 | 对应含义 |
+|---|---|---|
+| The company claims | 主句主干 | 这家公司声称 |
+| that the new device can reduce | 宾语从句主干 | 这种新设备可以降低 |
+| energy use by 20 percent | 宾语和幅度 | 能源使用量20% |
+
+#### 搭配与词义
+
+| 内容 | 说明 |
+|---|---|
+| reduce...by 20 percent | 将……降低20% |
+
 ## 学习记录
 
 - 2026-07-27 · 新词 · chatgpt-share-6a676996-9064-83ea-af45-76fb561dccc0 <!-- record_id: 2026-07-27-87fbaa4a -->
 - 2026-07-28 · 复习 · chatgpt-share-6a6a157c-3870-83ea-9754-483ee22e3026 <!-- record_id: 2026-07-28-15dd85b8 -->
+- 2026-08-06 · 复习 · chatgpt-share-6a74a1be-1910-83e8-9310-7ccf834d5d05 <!-- record_id: 2026-08-06-be5e7873 -->

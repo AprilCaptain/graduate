@@ -16,7 +16,11 @@
 | [adhere](../entries/a/adhere.md) | 坚持；遵守；粘附 |
 | [admission](../entries/a/admission.md) | 录取；承认 |
 | [adult](../entries/a/adult.md) | 成年人；成年的 |
+| [agricultural](../entries/a/agricultural.md) | 农业的；农艺的 |
 | [allowance](../entries/a/allowance.md) | 津贴；补助 |
+| [anonymous](../entries/a/anonymous.md) | 匿名的；无名的 |
 | [apology](../entries/a/apology.md) | 道歉；歉意 |
+| [appease](../entries/a/appease.md) | 安抚；使平息；缓解 |
 | [appreciative](../entries/a/appreciative.md) | 感激的；赞赏的 |
+| [artificial](../entries/a/artificial.md) | 人工的；人造的 |
 <!-- vocabulary-table:end -->

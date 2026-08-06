@@ -1,7 +1,7 @@
 ---
 word: "virtue"
 first_learned: "2026-07-26"
-last_updated: "2026-07-28"
+last_updated: "2026-08-06"
 ---
 
 # virtue
@@ -71,8 +71,33 @@ One virtue of the new method is that it saves both time and money.
 |---|---|
 | one virtue of... | 表示“……的一个优点” |
 
+### 2026-08-06 · 2026-08-06-be5e7873
+
+#### 原句
+
+One virtue of the new system is that it gives users more control over their personal data.
+
+#### 参考译文
+
+这个新系统的一个优点是，它让用户对自己的个人数据拥有更多控制权。
+
+#### 结构对照
+
+| 英文片段 | 句子作用 | 对应含义 |
+|---|---|---|
+| One virtue of the new system | 主语 | 这个新系统的一个优点 |
+| is | 系动词 | 是 |
+| that it gives users more control over their personal data | 表语从句 | 它让用户对自己的个人数据拥有更多控制权 |
+
+#### 搭配与词义
+
+| 内容 | 说明 |
+|---|---|
+| give sb. control over... | 让某人拥有对……的控制权 |
+
 ## 学习记录
 
 - 2026-07-26 · 新词 · chatgpt-share-6a6610f3-c070-83ea-b7a5-3ef8817e77ad <!-- record_id: 2026-07-26-0cb74c4a -->
 - 2026-07-27 · 复习 · chatgpt-share-6a676996-9064-83ea-af45-76fb561dccc0 <!-- record_id: 2026-07-27-87fbaa4a -->
 - 2026-07-28 · 复习 · chatgpt-share-6a6a157c-3870-83ea-9754-483ee22e3026 <!-- record_id: 2026-07-28-15dd85b8 -->
+- 2026-08-06 · 复习 · chatgpt-share-6a74a1be-1910-83e8-9310-7ccf834d5d05 <!-- record_id: 2026-08-06-be5e7873 -->

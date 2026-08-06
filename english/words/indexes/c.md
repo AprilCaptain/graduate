@@ -5,6 +5,7 @@
 <!-- vocabulary-table:start -->
 | 单词 | 核心含义 |
 |---|---|
+| [calculate](../entries/c/calculate.md) | 计算；估算 |
 | [capable](../entries/c/capable.md) | 有能力的；能够……的 |
 | [character](../entries/c/character.md) | 性格；人物 |
 | [claim](../entries/c/claim.md) | 声称；主张；索赔 |

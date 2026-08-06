@@ -5,6 +5,7 @@
 <!-- vocabulary-table:start -->
 | 单词 | 核心含义 |
 |---|---|
+| [famous](../entries/f/famous.md) | 著名的；出名的 |
 | [fancy](../entries/f/fancy.md) | 华丽的；高档的 |
 | [fascinate](../entries/f/fascinate.md) | 使着迷；深深吸引 |
 | [feature](../entries/f/feature.md) | 特点；功能；以……为特色 |

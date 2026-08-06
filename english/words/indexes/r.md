@@ -9,4 +9,5 @@
 | [recommend](../entries/r/recommend.md) | 推荐；建议 |
 | [regard](../entries/r/regard.md) | 认为；把……视为；尊重 |
 | [regulate](../entries/r/regulate.md) | 管理；控制；调节 |
+| [robot](../entries/r/robot.md) | 机器人；自动机械 |
 <!-- vocabulary-table:end -->
