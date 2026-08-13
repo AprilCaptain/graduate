@@ -11,4 +11,5 @@
 | [ornament](../entries/o/ornament.md) | 装饰品；装饰 |
 | [outrage](../entries/o/outrage.md) | 愤怒；使愤怒 |
 | [overestimate](../entries/o/overestimate.md) | 高估；估计过高 |
+| [overturn](../entries/o/overturn.md) | 推翻；翻倒 |
 <!-- vocabulary-table:end -->

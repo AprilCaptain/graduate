@@ -13,6 +13,7 @@
 | [perspective](../entries/p/perspective.md) | 视角；观点 |
 | [poem](../entries/p/poem.md) | 诗；诗歌作品 |
 | [predominance](../entries/p/predominance.md) | 优势；主导地位 |
+| [prescribe](../entries/p/prescribe.md) | 开处方；规定 |
 | [prohibition](../entries/p/prohibition.md) | 禁止；禁令 |
 | [provision](../entries/p/provision.md) | 条款；规定 |
 | [psychiatry](../entries/p/psychiatry.md) | 精神病学 |

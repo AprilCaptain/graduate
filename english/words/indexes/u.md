@@ -10,4 +10,5 @@
 | [underestimate](../entries/u/underestimate.md) | 低估 |
 | [unprecedented](../entries/u/unprecedented.md) | 前所未有的；史无前例的 |
 | [unrecognized](../entries/u/unrecognized.md) | 未被承认的；未被认出的 |
+| [upset](../entries/u/upset.md) | 使不安；心烦的 |
 <!-- vocabulary-table:end -->

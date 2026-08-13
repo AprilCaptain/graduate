@@ -13,7 +13,10 @@
 | [implement](../entries/i/implement.md) | 实施；执行 |
 | [indefensible](../entries/i/indefensible.md) | 无法辩护的；站不住脚的 |
 | [ineffective](../entries/i/ineffective.md) | 无效的；不起作用的 |
+| [inevitable](../entries/i/inevitable.md) | 不可避免的；必然的 |
+| [infect](../entries/i/infect.md) | 感染；传染 |
 | [instinct](../entries/i/instinct.md) | 本能；直觉 |
+| [instrument](../entries/i/instrument.md) | 工具；仪器；乐器 |
 | [intellect](../entries/i/intellect.md) | 智力；理解力 |
 | [international](../entries/i/international.md) | 国际的；跨国的 |
 | [irrational](../entries/i/irrational.md) | 不理性的；不合逻辑的 |
