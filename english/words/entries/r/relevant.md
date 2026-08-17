@@ -1,7 +1,7 @@
 ---
 word: "relevant"
 first_learned: "2026-08-13"
-last_updated: "2026-08-13"
+last_updated: "2026-08-17"
 ---
 
 # relevant
@@ -48,3 +48,4 @@ Only information relevant to the case should be included in the report.
 ## 学习记录
 
 - 2026-08-13 · 新词 · chatgpt-share-6a7dd7e9-95a8-83e8-b26b-aba13aca4ff7 <!-- record_id: 2026-08-13-bdbdad0d -->
+- 2026-08-17 · 复习 · chatgpt-share-6a83200d-f0f4-83e8-8838-f8ca7a87a574 <!-- record_id: 2026-08-17-ee5b5c10 -->

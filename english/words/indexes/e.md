@@ -19,5 +19,6 @@
 | [entire](../entries/e/entire.md) | 全部的；整个的 |
 | [envision](../entries/e/envision.md) | 想象；设想 |
 | [equivalent](../entries/e/equivalent.md) | 等价的；等同物 |
+| [ethos](../entries/e/ethos.md) | 精神特质；价值观 |
 | [extraordinarily](../entries/e/extraordinarily.md) | 非常；异常地 |
 <!-- vocabulary-table:end -->

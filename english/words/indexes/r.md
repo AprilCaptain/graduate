@@ -11,6 +11,8 @@
 | [regard](../entries/r/regard.md) | 认为；把……视为；尊重 |
 | [regulate](../entries/r/regulate.md) | 管理；控制；调节 |
 | [relevant](../entries/r/relevant.md) | 有关的；相关的 |
+| [reluctant](../entries/r/reluctant.md) | 不情愿的；勉强的 |
+| [representative](../entries/r/representative.md) | 有代表性的；代表 |
 | [rhythm](../entries/r/rhythm.md) | 节奏；韵律 |
 | [robot](../entries/r/robot.md) | 机器人；自动机械 |
 <!-- vocabulary-table:end -->

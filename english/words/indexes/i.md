@@ -15,6 +15,7 @@
 | [ineffective](../entries/i/ineffective.md) | 无效的；不起作用的 |
 | [inevitable](../entries/i/inevitable.md) | 不可避免的；必然的 |
 | [infect](../entries/i/infect.md) | 感染；传染 |
+| [inferior](../entries/i/inferior.md) | 较差的；次等的 |
 | [instinct](../entries/i/instinct.md) | 本能；直觉 |
 | [instrument](../entries/i/instrument.md) | 工具；仪器；乐器 |
 | [intellect](../entries/i/intellect.md) | 智力；理解力 |

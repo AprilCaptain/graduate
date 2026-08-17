@@ -20,6 +20,7 @@
 | [contribute](../entries/c/contribute.md) | 贡献；促成，导致 |
 | [controversy](../entries/c/controversy.md) | 争议；争论 |
 | [convey](../entries/c/convey.md) | 传达；表达 |
+| [conviction](../entries/c/conviction.md) | 坚定的信念；定罪 |
 | [coordinate](../entries/c/coordinate.md) | 协调；统筹 |
 | [correlate](../entries/c/correlate.md) | 相互关联；相关 |
 | [council](../entries/c/council.md) | 委员会；理事会 |
