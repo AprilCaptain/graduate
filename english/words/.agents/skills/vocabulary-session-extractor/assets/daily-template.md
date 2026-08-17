@@ -1,5 +1,11 @@
 # {{training_date}} 词汇训练
 
+## 今日复习
+
+<!-- daily-review:start -->
+{{daily_review_tasks_or_empty_message}}
+<!-- daily-review:end -->
+
 ## 第{{session_number}}次训练
 
 <!-- record_id: {{record_id}} -->

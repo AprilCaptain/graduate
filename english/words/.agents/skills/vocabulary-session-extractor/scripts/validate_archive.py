@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import update_index
+import update_daily_reviews
 
 
 LINK_RE = re.compile(r"(?<!!)\[[^\]]*]\(([^)]+)\)")
@@ -310,6 +311,11 @@ def validate_daily(
     for path in sorted((root / "daily").glob("**/*.md")):
         label = path.relative_to(root).as_posix()
         text = path.read_text(encoding="utf-8")
+        training_date = update_daily_reviews.parse_path_date(path, root / "daily")
+        if training_date is None:
+            errors.append(f"{label}: invalid daily date path")
+        elif not text.startswith(f"# {training_date.isoformat()} 词汇训练\n"):
+            errors.append(f"{label}: daily title does not match its path date")
         for record_id in RECORD_RE.findall(text):
             if record_id in record_ids:
                 errors.append(f"{label}: duplicate record_id {record_id}")
@@ -397,7 +403,76 @@ def validate_daily(
                     errors.append(
                         f"{label}: each 代表性训练句 translation must contain Chinese"
                     )
+    validate_daily_reviews(root, errors)
     return record_ids
+
+
+def validate_daily_reviews(root: Path, errors: list[str]) -> None:
+    try:
+        study_days = update_daily_reviews.discover_study_days(root)
+    except (OSError, UnicodeError, update_daily_reviews.ReviewUpdateError) as exc:
+        errors.append(f"daily/: cannot determine study-day sequence: {exc}")
+        return
+
+    for index, current in enumerate(study_days):
+        label = current.path.relative_to(root).as_posix()
+        expected = update_daily_reviews.review_targets(study_days, index)
+        try:
+            region = update_daily_reviews.find_review_region(current.text, label)
+        except update_daily_reviews.ReviewUpdateError as exc:
+            errors.append(str(exc))
+            continue
+        if region is None:
+            errors.append(f"{label}: missing 今日复习 section")
+            continue
+
+        heading_position = current.text.find(update_daily_reviews.REVIEW_HEADING)
+        training_heading = update_daily_reviews.TRAINING_RE.search(current.text)
+        if training_heading and heading_position > training_heading.start():
+            errors.append(f"{label}: 今日复习 must precede the first training section")
+
+        managed = current.text[region.content_start : region.content_end].strip("\n")
+        if not expected:
+            if managed != update_daily_reviews.EMPTY_REVIEW:
+                errors.append(
+                    f"{label}: an earliest study day must say "
+                    f"{update_daily_reviews.EMPTY_REVIEW!r}"
+                )
+            continue
+
+        lines = managed.splitlines()
+        parsed: list[tuple[str, str]] = []
+        invalid_task = False
+        for line in lines:
+            match = update_daily_reviews.TASK_RE.fullmatch(line)
+            if not match:
+                errors.append(
+                    f"{label}: 今日复习 must contain only standard review tasks"
+                )
+                invalid_task = True
+                break
+            parsed.append((match.group(2), match.group(3)))
+        if invalid_task:
+            continue
+
+        actual_dates = [task_date for task_date, _link in parsed]
+        expected_dates = [target.label for target in expected]
+        if len(actual_dates) != len(set(actual_dates)):
+            errors.append(f"{label}: duplicate 今日复习 task date")
+        if actual_dates != expected_dates:
+            errors.append(
+                f"{label}: 今日复习 dates are {actual_dates}, expected {expected_dates}"
+            )
+            continue
+        for (task_date, link), target in zip(parsed, expected):
+            expected_link = update_daily_reviews.relative_link(
+                current.path, target.path
+            )
+            if link != expected_link:
+                errors.append(
+                    f"{label}: review link for {task_date} is {link!r}, "
+                    f"expected {expected_link!r}"
+                )
 
 
 def validate_metadata(

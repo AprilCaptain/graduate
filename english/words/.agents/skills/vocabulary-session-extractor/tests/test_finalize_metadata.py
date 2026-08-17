@@ -89,6 +89,12 @@ class FinalizeMetadataEndToEndTest(unittest.TestCase):
             """
             # 2026-01-02 词汇训练
 
+            ## 今日复习
+
+            <!-- daily-review:start -->
+            暂无需复习内容。
+            <!-- daily-review:end -->
+
             ## 第1次训练
 
             <!-- record_id: 2026-01-02-1234abcd -->
